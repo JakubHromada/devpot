@@ -1,0 +1,121 @@
+﻿@import '../_settings.scss';
+
+.content-container {
+    display: grid;
+    grid-template-rows: auto;
+
+    .content {
+        display: grid;
+        grid-template-columns: 680px auto;
+        max-width: 1080px;
+        width: 100%;
+        justify-self: center;
+        padding-top: 25px;
+
+        .articles-content {
+            display: grid;
+            grid-auto-rows: auto;
+
+            .featured-article-section {
+                max-width: 680px;
+                width: 100%;
+                margin-bottom: 25px;
+
+                .title {
+                    font-size: 35px;
+                    padding-top: 7px;
+                }
+
+                .description {
+                    color: $light-grey;
+                }
+            }
+
+            .article-list {
+
+                .intro {
+                    margin-bottom: 25px;
+
+                    .header {
+                        border-bottom: $border-bottom;
+                        font-size: 15px;
+                    }
+
+                    p {
+                        margin: 0;
+                    }
+                }
+
+                .article {
+                    display: grid;
+                    grid-template-columns: auto 160px;
+                    margin-bottom: 30px;
+
+                    .article-content {
+                        display: grid;
+                        grid-auto-rows: auto;
+                        max-height: 120px;
+                        overflow: hidden;
+                        margin-right: 50px;
+
+                        .copy {
+                            .title {
+                                font-size: 23px;
+                            }
+
+                            .subtitle {
+                                color: rgba(0, 0, 0, 0.54);
+                                font-size: 16px;
+                            }
+                        }
+
+                        .details {
+                            display: flex;
+                            flex-flow: row;
+                            font-size: 15px;
+
+                            .creator {
+                                padding-right: 10px;
+                            }
+
+                            .date {
+                                color: rgba(0, 0, 0, 0.81);
+                            }
+                        }
+                    }
+
+                    .img {
+                    }
+                }
+            }
+        }
+
+        .popular-section {
+            width: 100%;
+            height: 100px;
+            position: sticky;
+            top: 25px;
+
+            .popular-section-content {
+                margin-left: 45px;
+                display: grid;
+                grid-auto-rows: auto;
+
+                h2 {
+                    font-size: 15px;
+                    margin: 0;
+                    border-bottom: $border-bottom;
+                }
+
+                .popular-list {
+                    font-size: 14px;
+                    color: rgba(0, 0, 0, 0.79);
+
+                    ul li {
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,39 @@
+﻿@import '../../_settings.scss';
+
+.hero-wrap {
+    display: grid;
+    grid-auto-rows: auto;
+    margin-top: 15px;
+
+    .content {
+        position: relative;
+        max-width: 780px;
+        width: 100%;
+        justify-self: center;
+
+        img {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .hero-content {
+            position: absolute;
+            top: 35%;
+            left: 2%;
+            transform: translate(0, -50%);
+            margin-right: 10px;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.56);
+
+            .hero-header {
+                font-size: 45px;
+                color: $light-black;
+            }
+
+            .hero-subtitle {
+                font-size: 25px;
+                color: $light-black;
+            }
+        }
+    }
+}

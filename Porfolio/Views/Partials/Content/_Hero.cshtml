@@ -1,0 +1,19 @@
+﻿@using ClientDependency.Core.Mvc
+@model Article
+
+@{
+    Html.RequiresCss("~/dist/hero.css");
+}
+
+<section class="hero-wrap">
+
+    <div class="content">
+        <img src="@Url.GetCropUrl(Model.HeroImage, "article_hero")" />
+
+        <div class="hero-content">
+            <div class="hero-header">@Model.HeroHeader</div>
+            <div class="hero-subtitle">@Model.HeroSubtitle</div>
+        </div>
+    </div>
+
+</section>

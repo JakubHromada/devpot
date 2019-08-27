@@ -1,0 +1,55 @@
+﻿@import '../_settings.scss';
+
+.article-container {
+
+    .article-content {
+        display: grid;
+        grid-auto-rows: auto;
+
+        .publish-details {
+            display: flex;
+            max-width: 780px;
+            width: 100%;
+            justify-self: center;
+            margin-bottom: 25px;
+
+            img {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+
+            .left-content {
+                display: flex;
+                flex-flow: column;
+                justify-content: center;
+                padding-left: 10px;
+
+                .writer {
+                    font-size: 14px;
+                }
+
+                .date {
+                    color: $light-grey;
+                    box-shadow: 0px 3px 2px 1px #0000000a;
+                    font-size: 13px;
+                }
+            }
+        }
+
+        .content {
+            max-width: 780px;
+            width: 100%;
+            justify-self: center;
+
+            pre.prettyprint {
+                margin-top: 10px;
+                padding: 0;
+                border: 1px solid #88888830;
+                font-size: 15px;
+                background-color: rgba(202, 202, 202, 0.2);
+            }
+        }
+    }
+}

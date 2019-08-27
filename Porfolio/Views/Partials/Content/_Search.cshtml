@@ -1,0 +1,16 @@
+﻿@using DevPot.Core.Models.ViewModels
+@using DevPot.Core.Controllers
+@model SearchFormModel
+
+<div class="search-section">
+
+    @using (Html.BeginUmbracoForm<SearchSurfaceController>("Search"))
+    {
+        <div class="search-box">
+            <div class="input-field">
+                @Html.EditorFor(x => x.SearchTerm, new { htmlAttributes = new { @type = "text", required = true } })
+                @Html.LabelFor(x => x.SearchTerm)
+            </div>
+        </div>
+    }
+</div>

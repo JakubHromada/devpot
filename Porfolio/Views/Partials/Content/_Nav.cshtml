@@ -1,0 +1,47 @@
+﻿@using ClientDependency.Core.Mvc
+@using DevPot.Core.Models.ViewModels
+@model NavigationViewModel
+
+@{
+    Html.RequiresCss("~/dist/nav.css");
+}
+
+<nav class="nav-container">
+
+    @Html.Partial("Partials/Content/_Search", new SearchFormModel())
+
+    @if (Model.IsHome)
+    {
+        <div class="nav-logo-section">
+
+            <div class="nav-logo-wrap">
+                <img src="~/icons/plant-pot.png" />
+            </div>
+
+            <div class="nav-logo-content">
+                <p class="title">DevPot</p>
+                <p class="subtitle">a dev's digest</p>
+            </div>
+
+        </div>
+    }
+
+    <div class="nav-wrap">
+
+        <section class="nav-items-wrap">
+
+            <div class="nav-items">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    @foreach (var item in Model.NavigationItems)
+                    {
+                        <li><a href="@item.Url">@item.Name</a></li>
+                    }
+                </ul>
+            </div>
+
+        </section>
+
+    </div>
+</nav>
+

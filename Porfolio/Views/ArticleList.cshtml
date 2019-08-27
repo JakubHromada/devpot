@@ -1,0 +1,37 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ArticleListViewModel>
+@using DevPot.Core.Models.ViewModels
+@using ClientDependency.Core.Mvc
+
+@{
+    Layout = "Master.cshtml";
+
+    Html.RequiresCss("~/dist/article_list.css");
+}
+
+<section class="article-list-container">
+
+    <div class="article-list">
+
+        @foreach (var article in Model.Articles)
+        {
+            <div class="article">
+
+                <div class="copy">
+
+                    <a class="header" href="@article.Url">@article.Name</a>
+
+                    <div class="content">
+                        @article.ArticleHighlight
+                    </div>
+
+                </div>
+
+                <a href="@article.Url">
+                    <img src="@Url.GetCropUrl(article.HeroImage, "article_thumbnail_small")" />
+                </a>
+            </div>
+        }
+
+    </div>
+
+</section>

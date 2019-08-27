@@ -1,0 +1,82 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<HomeViewModel>
+@using DevPot.Core.Models.ViewModels
+@using ClientDependency.Core.Mvc
+
+@{
+    Layout = "Master.cshtml";
+
+    Html.RequiresCss("~/dist/home.css");
+
+    var latestArticle = Model.Articles.FirstOrDefault();
+}
+
+<div class="content-container">
+
+    <div class="content">
+
+        <div class="articles-content">
+            <section class="featured-article-section">
+
+                <a href="@latestArticle.Url"><img src="@Url.GetCropUrl(latestArticle.HeroImage, "article_thumbnail_large")" /></a>
+
+                <h1 class="title"><a href="@latestArticle.Url">@latestArticle.HeroHeader</a></h1>
+
+                <div class="description">
+                    @latestArticle.ArticleHighlight
+                </div>
+
+            </section>
+
+            <section class="article-list">
+
+                <div class="intro">
+                    <h2 class="header">@Model.StrongContent.LatestArticlesTitle.ToUpper()</h2>
+                </div>
+
+                @foreach (var article in Model.Articles.Skip(1))
+                {
+                    <div class="article">
+                        <div class="article-content">
+
+                            <div class="copy">
+                                <h3 class="title">
+                                    <a href="@article.Url">@article.Name</a>
+                                </h3>
+                                <a href="@article.Url" class="subtitle">
+                                    @article.ArticleHighlight
+                                </a>
+                            </div>
+
+                            <div class="details">
+                                <div class="creator"><a href="">@article.AuthorName</a></div>
+                                <div class="date">@article.ArticleDate.ToLongDateString()</div>
+                            </div>
+
+                        </div>
+                        <div class="img">
+                            <a href="@article.Url"><img src="@Url.GetCropUrl(article.HeroImage, "article_thumbnail_small")" /></a>
+                        </div>
+                    </div>
+                }
+
+            </section>
+        </div>
+
+        <section class="popular-section">
+            <div class="popular-section-content">
+
+                <h2 class="header">POPULAR TOPICS</h2>
+
+                <div class="popular-list">
+                    <ul>
+                        <li><a href="">UMBRACO</a></li>
+                        <li><a href="">AZURE</a></li>
+                        <li><a href="">WEBPACK</a></li>
+                        <li><a href="">VUE.JS</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+    </div>
+</div>

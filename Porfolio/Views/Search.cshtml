@@ -1,0 +1,17 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<SearchViewModel>
+@using DevPot.Core.Models.ViewModels
+@{
+    Layout = "Master.cshtml";
+}
+
+<div>
+
+    <ul>
+        @foreach (var item in Model.SearchResult)
+        {
+            <li> <a href="@item.Content.Url">@item.Content.Name</a></li>
+        }
+    </ul>
+
+
+</div>

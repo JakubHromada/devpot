@@ -1,0 +1,109 @@
+﻿body,
+h1, h2, h3, h4, h5, h6,
+blockquote, pre,
+dl, dd, ol, ul,
+figure,
+hr,
+fieldset, legend {
+  margin:  0;
+  padding: 0;
+}
+
+
+
+/**
+ * Remove trailing margins from nested lists.
+ */
+
+li > {
+
+  ol,
+  ul {
+    margin-bottom: 0;
+  }
+
+}
+
+
+
+/**
+ * Remove default table spacing.
+ */
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+
+/**
+ * 1. Reset Chrome and Firefox behaviour which sets a `min-width: min-content;`
+ *    on fieldsets.
+ */
+
+fieldset {
+  min-width: 0; /* [1] */
+  border: 0;
+}
+
+/* ==========================================================================
+   #BOX-SIZING
+   ========================================================================== */
+
+/**
+ * More sensible default box-sizing:
+ * css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
+ */
+
+html {
+    box-sizing: border-box;
+}
+
+* {
+
+    &,
+    &:before,
+    &:after {
+        box-sizing: inherit;
+    }
+}
+
+/* Custom */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.site-content {
+    flex: 1 0 auto;
+    padding: 0;
+    width: 100%;
+}
+
+h1, h2, h3, h4 {
+    margin: 0;
+    color: rgba(0, 0, 0, 0.81);
+    padding-bottom: 7px;
+}
+
+p {
+    color: rgba(0, 0, 0, 0.81);
+    line-height: 1.4;
+}
+
+a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.81);
+}
+
+ul {
+    padding: 0;
+}
+
+ul li {
+    list-style: none;
+}

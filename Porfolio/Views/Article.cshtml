@@ -1,0 +1,35 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Article>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@using ClientDependency.Core.Mvc
+
+@{
+    Layout = "Master.cshtml";
+
+    Html.RequiresCss("~/dist/article.css");
+}
+
+@Html.Partial("Partials/Content/_Hero", Model)
+
+<section class="article-container">
+
+    <div class="article-content">
+
+        <div class="publish-details">
+            <img src="~/icons/publisher_jakub.jpg" />
+
+            <div class="left-content">
+                <a class="writer">Jakub Hromada</a>
+                <div class="date">@Model.ArticleDate.ToLongDateString()</div>
+            </div>
+            
+        </div>
+
+        <div class="content">
+
+            @Html.Raw(Model.ArticleContent)
+
+        </div>
+
+    </div>
+
+</section>

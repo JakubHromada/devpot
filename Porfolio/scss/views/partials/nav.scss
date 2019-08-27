@@ -1,0 +1,127 @@
+﻿@import '../../_settings.scss';
+
+.nav-container {
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
+    display: grid;
+    grid-template-rows: auto auto auto;
+    margin-bottom: 20px;
+
+    form {
+        max-width: 1080px;
+        width: 100%;
+        height: 35px;
+        border-bottom: 1px solid rgba(0,0,0,.1);
+        display: grid;
+        justify-self: center;
+
+        .search-box {
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+
+            .input-field {
+                position: relative;
+                width: 220px;
+            }
+
+            label {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                color: $light-grey;
+                transition: 0.2s all;
+            }
+
+            input {
+                width: 100%;
+                border: 0;
+                outline: 0;
+                padding: 0 0 0 5px;
+                box-shadow: none;
+                color: $light-grey;
+
+                input:-webkit-autofill,
+                input:-webkit-autofill:hover,
+                input:-webkit-autofill:focus {
+                    color: $light-grey;
+                    background-color: none;
+                    -webkit-text-fill-color: white;
+                    -webkit-box-shadow: 0 0 0px 1000px #000 inset;
+                }
+            }
+
+            input:invalid {
+                outline: 0;
+            }
+
+            input:focus,
+            input:valid {
+                border-color: $light-grey;
+            }
+
+            input:focus ~ label,
+            input:valid ~ label {
+                left: -65px;
+            }
+        }
+    }
+
+    .nav-logo-section {
+        max-width: 1080px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 120px auto;
+        justify-self: center;
+        padding-top: 35px;
+
+        img {
+            max-width: 120px;
+        }
+
+        .nav-logo-content {
+            display: flex;
+            flex-flow: column;
+            padding-left: 20px;
+
+            .title {
+                font-size: 42px;
+                font-weight: 600;
+            }
+
+            .subtitle {
+                font-size: 20px;
+            }
+
+            p {
+                margin: 0;
+            }
+        }
+    }
+
+    .nav-wrap {
+        height: 65px;
+        max-width: 1080px;
+        width: 100%;
+        display: grid;
+        justify-self: center;
+
+        .nav-items-wrap {
+            display: flex;
+            align-items: center;
+            /*background-color: rgba(138, 138, 138, 0.2);*/
+            .nav-items {
+
+                ul {
+                    display: flex;
+                    padding-left: 0;
+
+                    li {
+                        list-style: none;
+                        margin-right: 22px;
+                    }
+                }
+            }
+        }
+    }
+}
